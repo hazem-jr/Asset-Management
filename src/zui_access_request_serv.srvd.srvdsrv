@@ -1,0 +1,4 @@
+@EndUserText.label: 'Access Request UI Service'
+define service Zui_access_request_serv {
+  expose ZC_ASSET_REQuest as AssetRequests;
+}

@@ -1,0 +1,73 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+  typeName: 'Asset Request',
+  typeNamePlural: 'Asset Requests',
+  title: { value: 'Description' },
+  description: { value: 'Status' }
+}
+annotate view ZC_ASSET_REQuest with
+{
+
+  @UI.facet: [
+    { id: 'General',    purpose: #STANDARD, type: #FIELDGROUP_REFERENCE, label: 'General',    position: 10, targetQualifier: 'GENERAL' },
+    { id: 'Assignment', purpose: #STANDARD, type: #FIELDGROUP_REFERENCE, label: 'Assignments', position: 20, targetQualifier: 'ASSIGN'  },
+    { id: 'Status',     purpose: #STANDARD, type: #FIELDGROUP_REFERENCE, label: 'Status',     position: 30, targetQualifier: 'STATUS'  },
+    { id: 'Logs',     purpose: #STANDARD, type: #FIELDGROUP_REFERENCE, label: 'Logs',     position: 40, targetQualifier: 'LOGS'  }
+  ]
+
+  @UI.fieldGroup: [{ qualifier: 'GENERAL', position: 10, label: 'UUID' }]
+  @UI.lineItem: [{ position: 10 , label: 'UUID'}]
+  RequestUUID;
+
+  @UI.fieldGroup: [{ qualifier: 'GENERAL', position: 20, label: 'Company Code' }]
+  @UI.lineItem: [{ position: 20 }]
+  @UI.selectionField: [{ position : 10  }]
+  CompanyCode;
+
+  @UI.fieldGroup: [{ qualifier: 'GENERAL', position: 30, label: 'Asset Class' }]
+  @UI.lineItem: [{ position: 30 }]
+  AssetClass;
+
+  @UI.fieldGroup: [{ qualifier: 'GENERAL', position: 40, label: 'Description' }]
+  @UI.lineItem: [{ position: 40 }]
+  Description;
+
+  @UI.fieldGroup: [{ qualifier: 'ASSIGN', position: 10, label: 'Cost Center' }]
+  @UI.lineItem: [{ position: 50 }]
+  CostCenter;
+
+  @UI.fieldGroup: [{ qualifier: 'ASSIGN', position: 20, label: 'Internal Order' }]
+  @UI.lineItem: [{ position: 60 }]
+  InternalOrder;
+
+  @UI.fieldGroup: [{ qualifier: 'ASSIGN', position: 30, label: 'WBS Element' }]
+  WBSElement;
+
+  @UI.fieldGroup: [{ qualifier: 'ASSIGN', position: 40, label: 'Plant' }]
+  @UI.lineItem: [{ position: 80 }]
+  @UI.selectionField: [{ position : 20  }]
+  Plant;
+
+  @UI.fieldGroup: [{ qualifier: 'STATUS', position: 10, label: 'Status' }]
+  @UI.lineItem: [{ position: 70 }]
+  @UI.selectionField: [{ position : 30  }]
+  Status;
+
+  @UI.fieldGroup: [{ qualifier: 'STATUS', position: 20, label: 'Workflow Instance' }]
+  WorkflowInstanceId;
+
+  @UI.fieldGroup: [{ qualifier: 'STATUS', position: 30, label: 'Backend Asset Number' }]
+  BackendAssetNo1;
+
+  @UI.fieldGroup: [{ qualifier: 'STATUS', position: 40, label: 'Backend Asset SubNumber' }]
+  BackendAssetNo2;
+
+  @UI.fieldGroup: [{ qualifier: 'LOGS', position: 10, label: 'Created By' }]
+  CreatedBy;
+  @UI.fieldGroup: [{ qualifier: 'LOGS', position: 20, label: 'Created At' }]
+  CreatedAt;
+  @UI.fieldGroup: [{ qualifier: 'LOGS', position: 30, label: 'Changed By' }]
+  ChangedBy;
+  @UI.fieldGroup: [{ qualifier: 'LOGS', position: 40, label: 'Changed At' }]
+  ChangedAt;
+}

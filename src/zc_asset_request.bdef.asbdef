@@ -1,0 +1,18 @@
+projection;
+strict ( 2 );
+use draft;
+
+define behavior for ZC_ASSET_REQuest //alias <alias_name>
+{
+  use create;
+  use update;
+  use delete;
+
+  use action submitForApproval;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+}
